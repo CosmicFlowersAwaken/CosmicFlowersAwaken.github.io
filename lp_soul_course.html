@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魂を開いてやりたいことに気づける3ヶ月講座</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5B0;
+    --gold-pale: #F7F0E3;
+    --cream: #FDFAF4;
+    --charcoal: #2A2520;
+    --brown-mid: #6B5744;
+    --brown-light: #A08060;
+    --sage: #7A8C78;
+    --white: #FFFFFF;
+    --section-pad: 100px 0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(160deg, #F5EDD8 0%, #EDE0C4 40%, #D6C9A8 100%);
+  }
+  .hero-img-hint {
+    position: absolute;
+    inset: 0;
+    background: url('') center/cover no-repeat;
+    opacity: 0.18;
+  }
+  /* 画像挿入用プレースホルダー（朝靄・差し込む光） */
+  .hero-img-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-img-placeholder svg {
+    width: 100%; height: 100%;
+    opacity: 0.12;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 24px;
+    max-width: 720px;
+    animation: fadeUp 1.4s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--brown-light);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin-bottom: 36px;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--brown-mid);
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  .hero-body {
+    font-size: 15px;
+    color: var(--brown-mid);
+    line-height: 2.1;
+    margin-bottom: 48px;
+  }
+  .hero-cta-label {
+    display: inline-block;
+    background: var(--charcoal);
+    color: var(--gold-light);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    padding: 18px 52px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  .hero-cta-label:hover {
+    background: var(--gold);
+    color: var(--charcoal);
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--brown-light);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    animation: bounce 2s ease infinite;
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--brown-light), transparent);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* ─── IMAGE BLOCK ─── */
+  .img-block {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+  }
+  .img-block img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+  }
+  /* 画像なし時の美しいフォールバック */
+  .img-block-fallback {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    color: var(--brown-light);
+  }
+  .img-block-fallback.warm  { background: linear-gradient(135deg, #EDE0C4 0%, #D6C5A8 100%); }
+  .img-block-fallback.sage  { background: linear-gradient(135deg, #D8E0D0 0%, #C2CEBA 100%); }
+  .img-block-fallback.dusk  { background: linear-gradient(135deg, #D8CCBE 0%, #C4A97A 100%); }
+
+  /* ─── SECTIONS ─── */
+  section { padding: var(--section-pad); }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--charcoal);
+    margin-bottom: 40px;
+  }
+  .section-title em {
+    font-style: normal;
+    color: var(--brown-mid);
+  }
+  .section-body {
+    font-size: 15.5px;
+    color: #4A3F35;
+    line-height: 2.2;
+  }
+
+  /* ─── PAIN POINTS ─── */
+  .pain-section { background: var(--white); }
+  .pain-list {
+    list-style: none;
+    display: grid;
+    gap: 0;
+  }
+  .pain-list li {
+    padding: 22px 0;
+    border-bottom: 1px solid #EDE3D4;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 15px;
+    color: #4A3F35;
+    line-height: 1.8;
+    animation: fadeUp 0.7s ease both;
+  }
+  .pain-list li:first-child { border-top: 1px solid #EDE3D4; }
+  .pain-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 10px;
+  }
+
+  /* ─── CONCEPT ─── */
+  .concept-section { background: var(--cream); }
+  .concept-block {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .concept-item {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .concept-num {
+    flex-shrink: 0;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    padding-top: 4px;
+  }
+  .concept-item-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .concept-item-body {
+    font-size: 15px;
+    color: #5A4D42;
+    line-height: 2.1;
+  }
+
+  /* ─── CURRICULUM ─── */
+  .curriculum-section { background: #F2EAD8; }
+  .curriculum-grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .curriculum-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 32px 36px;
+    border-left: 3px solid var(--gold);
+    transition: transform 0.25s;
+  }
+  .curriculum-card:hover { transform: translateX(6px); }
+  .curriculum-card-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .curriculum-card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+  .curriculum-card-body {
+    font-size: 14px;
+    color: #6B5744;
+    line-height: 1.9;
+  }
+
+  /* ─── RESULTS ─── */
+  .results-section { background: var(--charcoal); }
+  .results-section .section-label { color: var(--gold); }
+  .results-section .section-title { color: var(--gold-light); }
+  .results-list {
+    list-style: none;
+    display: grid;
+    gap: 0;
+  }
+  .results-list li {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 15px;
+    color: #D4C4A8;
+    line-height: 1.8;
+  }
+  .results-list li:first-child { border-top: 1px solid rgba(201,169,110,0.2); }
+  .results-star {
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  /* ─── PRICING ─── */
+  .pricing-section { background: var(--cream); }
+  .pricing-card {
+    background: var(--white);
+    border: 1.5px solid var(--gold-light);
+    border-radius: 4px;
+    padding: 52px 56px;
+    max-width: 560px;
+    margin: 48px auto 0;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(180,140,80,0.08);
+  }
+  .pricing-tag {
+    display: inline-block;
+    background: var(--gold-pale);
+    color: var(--brown-mid);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .pricing-period {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    color: var(--brown-light);
+    margin-bottom: 12px;
+  }
+  .pricing-normal {
+    font-size: 14px;
+    color: var(--brown-light);
+    text-decoration: line-through;
+    margin-bottom: 8px;
+  }
+  .pricing-special {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--brown-mid);
+    margin-bottom: 6px;
+  }
+  .pricing-price {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--charcoal);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .pricing-tax {
+    font-size: 13px;
+    color: var(--brown-light);
+    margin-bottom: 40px;
+  }
+  .pricing-cta {
+    display: block;
+    background: var(--charcoal);
+    color: var(--gold-light);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    padding: 20px 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+  }
+  .pricing-cta:hover { background: var(--gold); color: var(--charcoal); }
+  .pricing-note {
+    font-size: 12px;
+    color: var(--brown-light);
+    line-height: 1.8;
+  }
+
+  /* ─── DIVIDER ─── */
+  .ornament {
+    text-align: center;
+    padding: 24px 0 0;
+    color: var(--gold-light);
+    font-size: 18px;
+    letter-spacing: 0.6em;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(212,196,168,0.5);
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+
+  /* ─── QUOTE ─── */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 0 20px 32px;
+    margin: 48px 0;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    color: var(--brown-mid);
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 72px 0; }
+    .pricing-card { padding: 40px 28px; }
+    .concept-item { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     HERO
+═══════════════════════════════════ -->
+<section class="hero">
+  <!-- 🖼 画像指示: 朝靄の中に差し込む光、窓辺の空のカップ。白〜淡い金色のトーン。
+       <img> タグをここに挿入してください -->
+  <div class="hero-img-placeholder">
+    <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#FDEFC8" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="700" cy="350" rx="420" ry="320" fill="url(#glow)"/>
+      <line x1="700" y1="0" x2="700" y2="900" stroke="#C9A96E" stroke-width="0.5" stroke-dasharray="4,12" stroke-opacity="0.4"/>
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">3ヶ月 魂開放プログラム</p>
+    <h1 class="hero-title">
+      何を学んでも、<br>
+      日常が変わらなかった<br>
+      <em>あなたへ。</em>
+    </h1>
+    <p class="hero-body">
+      セミナーを受けたり、本を読んだりしても、<br>
+      どこか満たされない、現実が変わらない。<br><br>
+      それは、あなたの「中身」が足りないからではなく、<br>
+      受け取る<strong style="font-weight:400; color:#7A5C3C;">「器（あり方）」</strong>が整っていなかっただけ。<br><br>
+      周りの反応に振り回される人生を卒業し、<br>
+      あなたの奥にある<em style="font-style:normal; color:#8B6914;">魂の煌めき</em>を思い出す。
+    </p>
+    <a href="#pricing" class="hero-cta-label">詳しく見る</a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     画像ブロック①：うつむく女性・逆光
+═══════════════════════════════════ -->
+<!-- 🖼 画像指示: うつむいて窓の外を見ている女性のシルエット。逆光、柔らかいコントラスト。
+     下記 img タグの src に差し替えてください -->
+<div class="img-block">
+  <div class="img-block-fallback warm">
+    <span style="letter-spacing:0.4em; opacity:0.6">— 変わりたいのに、変われない —</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     共感パート
+═══════════════════════════════════ -->
+<section class="pain-section">
+  <div class="container">
+    <p class="section-label">Pain Points</p>
+    <h2 class="section-title">
+      こんなお悩みは<br>ありませんか？
+    </h2>
+    <ul class="pain-list">
+      <li>
+        <span class="pain-dot"></span>
+        他人の顔色や、周りの反応ばかり気にして生きてしまう
+      </li>
+      <li>
+        <span class="pain-dot"></span>
+        「理想の自分」と「現実の自分」のギャップに、いつもダメ出しをしている
+      </li>
+      <li>
+        <span class="pain-dot"></span>
+        変わりたいのに、どうにもできない自分に焦りを感じる
+      </li>
+      <li>
+        <span class="pain-dot"></span>
+        いろんな講座やスキルを学んだけど、日常に活かせていない
+      </li>
+      <li>
+        <span class="pain-dot"></span>
+        自分が本当は何をしたいのか、「軸」が分からなくなってしまった
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     画像ブロック②：土を包む手・種
+═══════════════════════════════════ -->
+<!-- 🖼 画像指示: 両手で土を包む、または種を持つクローズアップ。温かみのある土の色・自然光。 -->
+<div class="img-block">
+  <div class="img-block-fallback sage">
+    <span style="letter-spacing:0.4em; opacity:0.6">— 土台を、根から整える —</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     コンセプト
+═══════════════════════════════════ -->
+<section class="concept-section">
+  <div class="container">
+    <p class="section-label">Concept</p>
+    <h2 class="section-title">
+      この講座が<br>
+      大切にしていること
+    </h2>
+
+    <div class="section-body">
+      どれだけ素晴らしい知識や言葉を学んでも、あなたの「あり方（器）」が整っていなければ、日常に落とし込むことはできません。
+    </div>
+
+    <div class="pull-quote">
+      この講座では、3ヶ月かけて<br>
+      【心の土台（あり方）】を整え、<br>
+      【日々の実践（ワーク）】を繰り返すことで、<br>
+      あなたという存在のステージを<br>根本から引き上げていきます。
+    </div>
+
+    <div class="concept-block">
+      <div class="concept-item">
+        <div class="concept-num">01</div>
+        <div>
+          <div class="concept-item-title">✨ 心の土台 ── 今、この瞬間の自分を認める</div>
+          <div class="concept-item-body">
+            理想とは違う自分、どうにかしたいのにどうにもならない自分。まずは、そんな自分を「あぁ、今の私はこうなんだね」とそのまま認めてあげることから始めます。<br><br>
+            グループワークを通して、人の反応から自分を学び、お互いを高め合える「安心安全な文化」の中で、あなたのブレない軸（在り方）を定めていきます。
+          </div>
+        </div>
+      </div>
+
+      <div class="concept-item">
+        <div class="concept-num">02</div>
+        <div>
+          <div class="concept-item-title">✨ 日々の実践 ── 自己否定とやりたいことを徹底的に洗い出す</div>
+          <div class="concept-item-body">
+            毎週のワークとジャーナリング（ノート術）を通して、あなたの心の中にある「親との関係」「蓋をしてきた怒り」など、様々な感情と丁寧に向き合います。<br><br>
+            「見て、やってみて、どうだったか？」を繰り返すことで、長年の思考の癖を外していきます。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     画像ブロック③：ジャーナル・ノート
+═══════════════════════════════════ -->
+<!-- 🖼 画像指示: ノートとペン、手書きのジャーナル風。柔らかい自然光が差し込む構図。 -->
+<div class="img-block">
+  <div class="img-block-fallback warm" style="background: linear-gradient(135deg, #E8DDD0 0%, #D0BFA8 100%);">
+    <span style="letter-spacing:0.4em; opacity:0.6">— 書くことで、自分が見えてくる —</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     カリキュラム
+═══════════════════════════════════ -->
+<section class="curriculum-section">
+  <div class="container">
+    <p class="section-label">Curriculum</p>
+    <h2 class="section-title">
+      3ヶ月間の<br>
+      サポート内容
+    </h2>
+    <div class="curriculum-grid">
+      <div class="curriculum-card">
+        <div class="curriculum-card-label">WEEKLY</div>
+        <div class="curriculum-card-title">週1回 ── 課題配信</div>
+        <div class="curriculum-card-body">自分と深く向き合う毎週のワーク。日常の中に、内省の時間をつくります。</div>
+      </div>
+      <div class="curriculum-card">
+        <div class="curriculum-card-label">BI-WEEKLY</div>
+        <div class="curriculum-card-title">隔週1回 ── グループミーティング（2時間）</div>
+        <div class="curriculum-card-body">仲間と共に軸を整える実践の場。互いの気づきが、自分の鏡になります。</div>
+      </div>
+      <div class="curriculum-card">
+        <div class="curriculum-card-label">MONTHLY × 2</div>
+        <div class="curriculum-card-title">月2回 ── 振り返りセッション（60分）</div>
+        <div class="curriculum-card-body">現在地を確認し、ステージを上げる個別フォロー。あなたのペースに寄り添います。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     画像ブロック④：上を向く女性
+═══════════════════════════════════ -->
+<!-- 🖼 画像指示: 笑顔で空を見上げる女性（横顔・上向き）。光の中にいる、解放感のある印象。 -->
+<div class="img-block" style="height: 360px;">
+  <div class="img-block-fallback sage" style="height: 360px; background: linear-gradient(160deg, #C8D8C0 0%, #A8C0A0 100%);">
+    <span style="letter-spacing:0.4em; opacity:0.6">— 解放された先にある、あなたへ —</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     得られる未来
+═══════════════════════════════════ -->
+<section class="results-section">
+  <div class="container">
+    <p class="section-label">Your Future</p>
+    <h2 class="section-title">
+      この3ヶ月で<br>
+      あなたが得られる未来
+    </h2>
+    <ul class="results-list">
+      <li>
+        <span class="results-star">✦</span>
+        誰に何を言われてもブレない「自分の軸」が定まる
+      </li>
+      <li>
+        <span class="results-star">✦</span>
+        他人の反応に一喜一憂しなくなり、人生の土台が安定する
+      </li>
+      <li>
+        <span class="results-star">✦</span>
+        最高の仲間と共に、お互いの人生のステージをシフトしていける
+      </li>
+      <li>
+        <span class="results-star">✦</span>
+        長年悩んでいたこと、繰り返していた「お決まりのパターン」に変化が起こる
+      </li>
+      <li>
+        <span class="results-star">✦</span>
+        「私はこれでいいんだ」と心から思え、本当にやりたいことへ進み出せる
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     画像ブロック⑤：開かれた扉・夕暮れ
+═══════════════════════════════════ -->
+<!-- 🖼 画像指示: 静かな夕暮れの空、または開いた扉の向こうに光が見える構図。希望と静けさ。 -->
+<div class="img-block" style="height: 280px;">
+  <div class="img-block-fallback dusk" style="height: 280px;">
+    <span style="letter-spacing:0.4em; opacity:0.6">— 扉を、開ける —</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     募集要項・価格
+═══════════════════════════════════ -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <p class="section-label">Enrollment</p>
+    <h2 class="section-title" style="text-align:center">
+      募集要項
+    </h2>
+
+    <div class="pricing-card">
+      <div class="pricing-tag">3ヶ月集中プログラム</div>
+      <div class="pricing-period">受講期間 ── 3ヶ月間</div>
+
+      <div style="height: 1px; background: #EDE3D4; margin: 24px 0;"></div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:32px;">
+        <div style="border:1px solid #EDE3D4; border-radius:4px; padding:20px 16px; text-align:center;">
+          <div style="font-size:11px; letter-spacing:0.25em; color:#A08060; margin-bottom:10px;">通常価格</div>
+          <div style="font-family:'Noto Serif JP',serif; font-size:26px; font-weight:400; color:#2A2520; line-height:1.2; margin-bottom:4px;">¥200,000</div>
+          <div style="font-size:12px; color:#A08060;">税込</div>
+        </div>
+        <div style="border:2px solid #C9A96E; border-radius:4px; padding:20px 16px; text-align:center; background:#FDFAF4;">
+          <div style="font-size:11px; letter-spacing:0.25em; color:#C9A96E; margin-bottom:10px;">カミサロン特別価格</div>
+          <div style="font-family:'Noto Serif JP',serif; font-size:26px; font-weight:400; color:#2A2520; line-height:1.2; margin-bottom:4px;">¥193,334</div>
+          <div style="font-size:12px; color:#A08060;">税込</div>
+        </div>
+      </div>
+
+      <a href="#" class="pricing-cta">お申し込み・お問い合わせ</a>
+      <p class="pricing-note">
+        ご不明な点はお気軽にご連絡ください。<br>
+        まずは無料相談からも承っております。
+      </p>
+    </div>
+
+    <div class="ornament" style="margin-top: 60px; padding-bottom: 0;">
+      ✦ &nbsp; ✦ &nbsp; ✦
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer>
+  <p style="font-family:'Noto Serif JP',serif; font-size:14px; color:rgba(212,196,168,0.7); margin-bottom:16px;">
+    魂を開いてやりたいことに気づける 3ヶ月講座
+  </p>
+  <p>© 2025 カミサロン. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
