@@ -15,7 +15,6 @@
     --charcoal: #2A2520;
     --brown-mid: #6B5744;
     --brown-light: #A08060;
-    --sage: #7A8C78;
     --white: #FFFFFF;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,17 +38,13 @@
     background: linear-gradient(160deg, #F5EDD8 0%, #EDE0C4 40%, #D6C9A8 100%);
   }
   .hero-glow {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
     pointer-events: none;
   }
   .hero-glow svg { width: 100%; height: 100%; opacity: 0.13; }
   .hero-content {
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
     text-align: center;
     padding: 80px 28px;
     max-width: 740px;
@@ -61,73 +56,64 @@
   }
   .hero-eyebrow {
     font-family: 'Noto Serif JP', serif;
-    font-size: 12px;
-    letter-spacing: 0.35em;
-    color: var(--brown-light);
-    margin-bottom: 36px;
-  }
-  .hero-sub {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(13px, 2.5vw, 16px);
-    color: var(--brown-light);
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-    font-weight: 300;
+    font-size: 12px; letter-spacing: 0.35em;
+    color: var(--brown-light); margin-bottom: 32px;
   }
   .hero-title {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(28px, 5.5vw, 46px);
-    font-weight: 400;
-    line-height: 1.65;
-    color: var(--charcoal);
-    margin-bottom: 40px;
+    font-weight: 400; line-height: 1.65;
+    color: var(--charcoal); margin-bottom: 12px;
   }
-  .hero-title em {
-    font-style: normal;
-    color: var(--brown-mid);
-    border-bottom: 1.5px solid var(--gold);
-    padding-bottom: 3px;
+  .hero-subtitle {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(14px, 2.5vw, 18px);
+    color: var(--brown-mid); letter-spacing: 0.08em;
+    margin-bottom: 44px; line-height: 1.9;
   }
   .hero-body {
     font-size: clamp(14px, 2vw, 16px);
+    color: var(--brown-mid); line-height: 2.3;
+    margin-bottom: 36px;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; gap: 12px;
+    margin-bottom: 40px;
+  }
+  .hero-tag {
+    background: rgba(107,87,68,0.1);
     color: var(--brown-mid);
-    line-height: 2.2;
-    margin-bottom: 20px;
+    font-size: 13px; padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(201,169,110,0.4);
+    font-family: 'Noto Serif JP', serif;
   }
   .hero-catch {
     font-family: 'Noto Serif JP', serif;
-    font-size: clamp(15px, 2.5vw, 19px);
-    color: var(--charcoal);
-    line-height: 1.9;
-    margin: 36px 0 52px;
+    font-size: clamp(16px, 2.8vw, 21px);
+    color: var(--charcoal); line-height: 2;
+    margin: 0 0 48px;
     padding: 28px 32px;
     border-top: 1px solid var(--gold-light);
     border-bottom: 1px solid var(--gold-light);
   }
   .btn-primary {
     display: inline-block;
-    background: var(--charcoal);
-    color: var(--gold-light);
+    background: var(--charcoal); color: var(--gold-light);
     font-family: 'Noto Serif JP', serif;
-    font-size: 14px;
-    letter-spacing: 0.2em;
-    padding: 18px 52px;
-    border-radius: 2px;
+    font-size: 14px; letter-spacing: 0.2em;
+    padding: 18px 52px; border-radius: 2px;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
   }
   .btn-primary:hover { background: var(--gold); color: var(--charcoal); }
   .hero-scroll {
-    position: absolute;
-    bottom: 36px;
-    left: 50%;
+    position: absolute; bottom: 36px; left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--brown-light);
-    font-size: 11px;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 8px;
+    color: var(--brown-light); font-size: 11px;
     letter-spacing: 0.2em;
     animation: bounce 2.2s ease infinite;
   }
@@ -138,153 +124,104 @@
   }
 
   /* ─── IMAGE PLACEHOLDER ─── */
-  .img-block {
-    width: 100%;
-    overflow: hidden;
-  }
-  .img-block img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .img-block { width: 100%; overflow: hidden; }
   .img-ph {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%; height: 300px;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Noto Serif JP', serif;
-    font-size: 13px;
-    letter-spacing: 0.35em;
-    color: rgba(107,87,68,0.55);
+    font-size: 13px; letter-spacing: 0.35em;
+    color: rgba(107,87,68,0.5);
   }
   .ph-warm  { background: linear-gradient(135deg, #EDE0C4 0%, #D6C5A8 100%); }
   .ph-sage  { background: linear-gradient(135deg, #D8E0D0 0%, #C2CEBA 100%); height: 260px; }
   .ph-dusk  { background: linear-gradient(135deg, #D8CCBE 0%, #C4A97A 100%); height: 260px; }
-  .ph-dark  { background: linear-gradient(135deg, #3A3028 0%, #2A2520 100%); height: 260px; color: rgba(212,196,168,0.35); }
+  .ph-dark  { background: linear-gradient(135deg, #3A3028 0%, #2A2520 100%); height: 260px; color: rgba(212,196,168,0.3); }
 
   /* ─── SECTIONS ─── */
   section { padding: 96px 0; }
   .container { max-width: 760px; margin: 0 auto; padding: 0 28px; }
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.4em;
-    color: var(--gold);
-    margin-bottom: 18px;
-    font-weight: 400;
-  }
+  .section-label { font-size: 11px; letter-spacing: 0.4em; color: var(--gold); margin-bottom: 18px; }
   .section-title {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(22px, 4vw, 34px);
-    font-weight: 400;
-    line-height: 1.7;
-    color: var(--charcoal);
-    margin-bottom: 44px;
+    font-weight: 400; line-height: 1.7;
+    color: var(--charcoal); margin-bottom: 44px;
   }
   .section-body { font-size: 15.5px; color: #4A3F35; line-height: 2.25; }
 
   /* ─── PAIN ─── */
   .pain-section { background: var(--white); }
-  .pain-intro {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(15px, 2.5vw, 18px);
-    color: var(--brown-mid);
-    line-height: 2;
-    margin-bottom: 44px;
-    padding: 28px 32px;
-    border-left: 3px solid var(--gold);
-    background: var(--gold-pale);
-  }
   .pain-list { list-style: none; }
   .pain-list li {
-    padding: 20px 0;
-    border-bottom: 1px solid #EDE3D4;
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    font-size: 15px;
-    color: #4A3F35;
-    line-height: 1.85;
+    padding: 20px 0; border-bottom: 1px solid #EDE3D4;
+    display: flex; align-items: flex-start; gap: 18px;
+    font-size: 15px; color: #4A3F35; line-height: 1.85;
   }
   .pain-list li:first-child { border-top: 1px solid #EDE3D4; }
-  .pain-check { flex-shrink: 0; color: var(--gold); font-size: 15px; margin-top: 3px; }
+  .pain-check { flex-shrink: 0; color: var(--gold); font-size: 14px; margin-top: 4px; }
   .pain-close {
-    margin-top: 52px;
+    margin-top: 48px;
     font-family: 'Noto Serif JP', serif;
-    font-size: clamp(16px, 2.8vw, 20px);
-    color: var(--charcoal);
-    line-height: 2;
-    text-align: center;
-    padding: 36px 28px;
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: var(--charcoal); line-height: 2;
+    text-align: center; padding: 32px 28px;
     border: 1.5px solid var(--gold-light);
-    border-radius: 2px;
-    background: var(--gold-pale);
+    border-radius: 2px; background: var(--gold-pale);
   }
 
   /* ─── LETTER ─── */
   .letter-section { background: var(--cream); }
-  .letter-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 13px;
-    letter-spacing: 0.25em;
-    color: var(--gold);
-    margin-bottom: 32px;
-  }
-  .letter-body {
-    font-size: 15.5px;
-    color: #4A3F35;
-    line-height: 2.4;
-  }
+  .letter-body { font-size: 15.5px; color: #4A3F35; line-height: 2.4; }
   .letter-body p { margin-bottom: 28px; }
-  .letter-quote {
-    margin: 40px 0;
-    padding: 28px 36px;
-    background: #F2EAD8;
+  .letter-change {
+    margin: 40px 0; padding: 32px 36px;
+    background: var(--gold-pale);
     border-left: 3px solid var(--gold);
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--brown-mid);
-    line-height: 2.2;
   }
+  .letter-change-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px; letter-spacing: 0.2em;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .letter-change-list { list-style: none; }
+  .letter-change-list li {
+    font-size: 15px; color: #4A3F35;
+    padding: 8px 0; border-bottom: 1px solid rgba(201,169,110,0.2);
+    display: flex; gap: 14px; align-items: flex-start; line-height: 1.8;
+  }
+  .letter-change-list li:last-child { border-bottom: none; }
+  .letter-change-list li::before { content: '✦'; color: var(--gold); flex-shrink: 0; }
   .letter-close {
-    margin-top: 44px;
+    margin-top: 44px; padding: 32px;
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(15px, 2.5vw, 18px);
-    color: var(--charcoal);
-    line-height: 2.1;
-    padding: 32px;
+    color: var(--charcoal); line-height: 2.1;
     border-top: 1px solid var(--gold-light);
     border-bottom: 1px solid var(--gold-light);
   }
 
   /* ─── CONCEPT ─── */
   .concept-section { background: #F2EAD8; }
-  .concept-body { font-size: 15.5px; color: #4A3F35; line-height: 2.25; margin-bottom: 48px; }
   .concept-highlight {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(16px, 2.8vw, 20px);
-    color: var(--charcoal);
-    line-height: 2;
-    text-align: center;
-    padding: 36px 28px;
-    background: var(--white);
-    border-radius: 2px;
-    margin-bottom: 56px;
+    color: var(--charcoal); line-height: 2;
+    text-align: center; padding: 36px 28px;
+    background: var(--white); border-radius: 2px;
+    margin: 0 0 52px;
   }
   .concept-cards { display: grid; gap: 36px; }
   .concept-card { display: flex; gap: 28px; align-items: flex-start; }
   .concept-num {
-    flex-shrink: 0;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    padding-top: 5px;
-    min-width: 40px;
+    flex-shrink: 0; font-family: 'Noto Serif JP', serif;
+    font-size: 12px; letter-spacing: 0.2em;
+    color: var(--gold); padding-top: 5px; min-width: 40px;
   }
   .concept-card-title {
     font-family: 'Noto Serif JP', serif;
     font-size: clamp(16px, 2.5vw, 19px);
-    font-weight: 400;
-    color: var(--charcoal);
-    margin-bottom: 14px;
-    line-height: 1.65;
+    font-weight: 400; color: var(--charcoal);
+    margin-bottom: 14px; line-height: 1.65;
   }
   .concept-card-body { font-size: 15px; color: #5A4D42; line-height: 2.2; }
 
@@ -293,20 +230,15 @@
   .group-intro { font-size: 15.5px; color: #4A3F35; line-height: 2.3; margin-bottom: 52px; }
   .group-cycle { display: grid; gap: 0; }
   .group-item {
-    padding: 32px 0;
-    border-bottom: 1px solid #EDE3D4;
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
+    padding: 32px 0; border-bottom: 1px solid #EDE3D4;
+    display: flex; gap: 28px; align-items: flex-start;
   }
   .group-item:first-child { border-top: 1px solid #EDE3D4; }
   .group-icon { flex-shrink: 0; font-size: 22px; margin-top: 2px; }
   .group-item-title {
     font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--charcoal);
-    margin-bottom: 10px;
-    line-height: 1.6;
+    font-size: 16px; color: var(--charcoal);
+    margin-bottom: 10px; line-height: 1.6;
   }
   .group-item-body { font-size: 14.5px; color: #5A4D42; line-height: 2; }
 
@@ -314,258 +246,129 @@
   .curriculum-section { background: var(--charcoal); }
   .curriculum-section .section-label { color: var(--gold); }
   .curriculum-section .section-title { color: var(--gold-light); }
-  .curriculum-grid { display: grid; gap: 20px; margin-top: 0; }
+  .curriculum-grid { display: grid; gap: 20px; }
   .curriculum-card {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201,169,110,0.25);
+    border: 1px solid rgba(201,169,110,0.2);
     border-left: 3px solid var(--gold);
-    border-radius: 2px;
-    padding: 28px 32px;
+    border-radius: 2px; padding: 28px 32px;
     transition: background 0.25s;
   }
   .curriculum-card:hover { background: rgba(201,169,110,0.08); }
-  .curriculum-tag {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-  .curriculum-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--gold-light);
-    margin-bottom: 8px;
-  }
+  .curriculum-tag { font-size: 11px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 10px; }
+  .curriculum-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--gold-light); margin-bottom: 8px; }
   .curriculum-body { font-size: 14px; color: rgba(212,196,168,0.75); line-height: 1.9; }
 
   /* ─── RESULTS ─── */
   .results-section { background: var(--cream); }
   .results-list { list-style: none; }
   .results-list li {
-    padding: 22px 0;
-    border-bottom: 1px solid #EDE3D4;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    font-size: 15px;
-    color: #4A3F35;
-    line-height: 1.85;
+    padding: 22px 0; border-bottom: 1px solid #EDE3D4;
+    display: flex; gap: 20px; align-items: flex-start;
+    font-size: 15px; color: #4A3F35; line-height: 1.85;
   }
   .results-list li:first-child { border-top: 1px solid #EDE3D4; }
   .results-star { flex-shrink: 0; color: var(--gold); font-size: 14px; margin-top: 4px; }
 
   /* ─── SCHEDULE ─── */
   .schedule-section { background: var(--white); }
-  .schedule-grid { display: grid; gap: 20px; margin-top: 8px; }
-  .schedule-card {
-    border: 1px solid #EDE3D4;
-    border-radius: 2px;
-    padding: 28px 32px;
+  .overview-box {
+    background: var(--charcoal); border-radius: 4px;
+    padding: 32px 36px; margin-bottom: 36px;
   }
-  .schedule-card-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    margin-bottom: 10px;
+  .overview-box-label { font-size: 11px; letter-spacing: 0.35em; color: var(--gold); margin-bottom: 20px; }
+  .overview-row {
+    display: flex; gap: 16px; align-items: baseline;
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+    padding: 14px 0;
   }
-  .schedule-card-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--charcoal);
-    margin-bottom: 12px;
-  }
+  .overview-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .overview-key { flex-shrink: 0; font-size: 12px; letter-spacing: 0.2em; color: var(--gold); min-width: 80px; }
+  .overview-val { font-size: 15px; color: var(--gold-light); font-family: 'Noto Serif JP', serif; line-height: 1.9; }
+  .overview-val small { font-size: 13px; color: rgba(232,213,176,0.65); }
+  .schedule-grid { display: grid; gap: 20px; }
+  .schedule-card { border: 1px solid #EDE3D4; border-radius: 2px; padding: 28px 32px; }
+  .schedule-card-label { font-size: 11px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 10px; }
+  .schedule-card-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--charcoal); margin-bottom: 12px; }
   .schedule-card-body { font-size: 14.5px; color: #5A4D42; line-height: 2; }
-  .schedule-dates {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+  .schedule-dates { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; }
   .date-pill {
-    background: var(--gold-pale);
-    color: var(--brown-mid);
-    font-size: 13px;
-    padding: 5px 14px;
-    border-radius: 20px;
-    border: 1px solid var(--gold-light);
+    background: var(--gold-pale); color: var(--brown-mid);
+    font-size: 13px; padding: 5px 14px;
+    border-radius: 20px; border: 1px solid var(--gold-light);
   }
   .tokuten-box {
-    margin-top: 32px;
-    background: var(--gold-pale);
-    border: 1.5px solid var(--gold-light);
-    border-radius: 2px;
-    padding: 32px 36px;
+    margin-top: 32px; background: var(--gold-pale);
+    border: 1.5px solid var(--gold-light); border-radius: 2px; padding: 32px 36px;
   }
-  .tokuten-label {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    margin-bottom: 14px;
-  }
-  .tokuten-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 17px;
-    color: var(--charcoal);
-    margin-bottom: 14px;
-  }
+  .tokuten-label { font-size: 11px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 14px; }
+  .tokuten-title { font-family: 'Noto Serif JP', serif; font-size: 17px; color: var(--charcoal); margin-bottom: 14px; }
   .tokuten-body { font-size: 14.5px; color: #5A4D42; line-height: 2; }
 
   /* ─── PRICING ─── */
   .pricing-section { background: #F2EAD8; }
   .pricing-card {
-    background: var(--white);
-    border: 1.5px solid var(--gold-light);
-    border-radius: 4px;
-    padding: 52px 48px;
-    max-width: 580px;
-    margin: 0 auto 48px;
+    background: var(--white); border: 1.5px solid var(--gold-light);
+    border-radius: 4px; padding: 52px 48px;
+    max-width: 580px; margin: 0 auto 48px;
     text-align: center;
     box-shadow: 0 8px 40px rgba(180,140,80,0.08);
   }
-  .pricing-period {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 15px;
-    color: var(--brown-light);
-    margin-bottom: 32px;
-  }
-  .pricing-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  .price-box {
-    border: 1px solid #EDE3D4;
-    border-radius: 3px;
-    padding: 20px 14px;
-    text-align: center;
-  }
-  .price-box.featured {
-    border: 2px solid var(--gold);
-    background: var(--gold-pale);
-  }
-  .price-box-label {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--brown-light);
-    margin-bottom: 10px;
-  }
+  .pricing-period { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--brown-light); margin-bottom: 32px; }
+  .pricing-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+  .price-box { border: 1px solid #EDE3D4; border-radius: 3px; padding: 20px 14px; text-align: center; }
+  .price-box.featured { border: 2px solid var(--gold); background: var(--gold-pale); }
+  .price-box-label { font-size: 11px; letter-spacing: 0.25em; color: var(--brown-light); margin-bottom: 10px; }
   .price-box.featured .price-box-label { color: var(--gold); }
-  .price-box-num {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(22px, 4vw, 28px);
-    font-weight: 400;
-    color: var(--charcoal);
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
+  .price-box-num { font-family: 'Noto Serif JP', serif; font-size: clamp(22px,4vw,28px); color: var(--charcoal); line-height: 1.2; margin-bottom: 4px; }
   .price-box-tax { font-size: 12px; color: var(--brown-light); }
+  .price-note { font-size: 12px; color: var(--brown-light); margin-bottom: 24px; line-height: 1.8; }
   .pricing-cta {
-    display: block;
-    background: var(--charcoal);
-    color: var(--gold-light);
-    font-family: 'Noto Serif JP', serif;
-    font-size: 15px;
-    letter-spacing: 0.2em;
-    padding: 20px 0;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.3s;
-    margin-bottom: 16px;
+    display: block; background: var(--charcoal); color: var(--gold-light);
+    font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 0.2em;
+    padding: 20px 0; border-radius: 2px; text-decoration: none;
+    transition: background 0.3s; margin-bottom: 16px;
   }
   .pricing-cta:hover { background: var(--gold); color: var(--charcoal); }
   .pricing-note { font-size: 12px; color: var(--brown-light); line-height: 1.9; }
 
-  /* ─── TAIKEN CTA ─── */
+  /* ─── TAIKEN ─── */
   .taiken-section { background: var(--charcoal); text-align: center; padding: 80px 0; }
   .taiken-label { font-size: 11px; letter-spacing: 0.4em; color: var(--gold); margin-bottom: 20px; }
-  .taiken-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(20px, 3.5vw, 28px);
-    color: var(--gold-light);
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
+  .taiken-title { font-family: 'Noto Serif JP', serif; font-size: clamp(20px,3.5vw,28px); color: var(--gold-light); line-height: 1.8; margin-bottom: 20px; }
   .taiken-body { font-size: 15px; color: rgba(212,196,168,0.75); line-height: 2.1; margin-bottom: 40px; }
   .btn-taiken {
-    display: inline-block;
-    background: transparent;
-    color: var(--gold-light);
-    font-family: 'Noto Serif JP', serif;
-    font-size: 14px;
-    letter-spacing: 0.2em;
-    padding: 17px 48px;
-    border-radius: 2px;
-    text-decoration: none;
+    display: inline-block; background: transparent; color: var(--gold-light);
+    font-family: 'Noto Serif JP', serif; font-size: 14px; letter-spacing: 0.2em;
+    padding: 17px 48px; border-radius: 2px; text-decoration: none;
     border: 1.5px solid var(--gold);
     transition: background 0.3s, color 0.3s;
   }
   .btn-taiken:hover { background: var(--gold); color: var(--charcoal); }
 
-  /* ─── POLICY ─── */
-  .policy-section { background: var(--cream); }
-  .policy-section .section-title { font-size: clamp(18px, 3vw, 24px); }
-  .policy-block { margin-bottom: 40px; }
-  .policy-block-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 16px;
-    color: var(--charcoal);
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--gold-light);
-  }
-  .policy-list { list-style: none; }
-  .policy-list li {
-    font-size: 14px;
-    color: #5A4D42;
-    line-height: 2;
-    padding: 6px 0;
-    padding-left: 16px;
-    position: relative;
-  }
-  .policy-list li::before {
-    content: '・';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-  }
-
   /* ─── CLOSING ─── */
   .closing-section { background: linear-gradient(160deg, #EDE0C4 0%, #D6C9A8 100%); text-align: center; padding: 100px 0; }
-  .closing-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(18px, 3.5vw, 26px);
-    color: var(--charcoal);
-    line-height: 2.1;
-    margin-bottom: 40px;
-  }
-  .closing-body {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(20px, 4vw, 30px);
-    color: var(--brown-mid);
-    line-height: 2;
-    margin-bottom: 52px;
-  }
-  .closing-body em { font-style: normal; color: #8B6914; }
+  .closing-title { font-family: 'Noto Serif JP', serif; font-size: clamp(18px,3.5vw,26px); color: var(--charcoal); line-height: 2.1; margin-bottom: 40px; }
+  .closing-body { font-family: 'Noto Serif JP', serif; font-size: clamp(20px,4vw,30px); color: var(--brown-mid); line-height: 2; margin-bottom: 52px; }
+  .closing-btns { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+
+  /* ─── POLICY ─── */
+  .policy-section { background: var(--cream); }
+  .policy-block { margin-bottom: 40px; }
+  .policy-block-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--charcoal); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-light); }
+  .policy-list { list-style: none; }
+  .policy-list li { font-size: 14px; color: #5A4D42; line-height: 2; padding: 6px 0 6px 16px; position: relative; }
+  .policy-list li::before { content: '・'; position: absolute; left: 0; color: var(--gold); }
 
   /* ─── FOOTER ─── */
-  footer {
-    background: var(--charcoal);
-    color: rgba(212,196,168,0.45);
-    text-align: center;
-    padding: 48px 24px;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    line-height: 2.2;
-  }
-  .ornament { text-align: center; color: var(--gold-light); font-size: 16px; letter-spacing: 0.6em; margin: 24px 0; }
+  footer { background: var(--charcoal); color: rgba(212,196,168,0.45); text-align: center; padding: 48px 24px; font-size: 12px; letter-spacing: 0.1em; line-height: 2.2; }
 
   @media (max-width: 600px) {
     section { padding: 72px 0; }
     .pricing-card { padding: 40px 24px; }
     .pricing-row { grid-template-columns: 1fr; }
     .concept-card { flex-direction: column; gap: 10px; }
-    .letter-quote { padding: 20px 22px; }
+    .overview-box { padding: 24px 20px; }
   }
 </style>
 </head>
@@ -573,8 +376,7 @@
 
 <!-- ══════════════════ HERO ══════════════════ -->
 <section class="hero">
-  <!-- 🖼 画像指示: 朝靄の中に差し込む光、または窓辺に置かれた空のカップ。白〜淡い金色のトーン。
-       <img>タグをここの.hero-glowの代わりに背景として設定してください -->
+  <!-- 🖼 画像指示: 朝靄の中に差し込む光、または広い空に向かって歩く人のシルエット。白〜淡い金色のトーン。 -->
   <div class="hero-glow">
     <svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <defs>
@@ -586,32 +388,31 @@
       <ellipse cx="700" cy="360" rx="500" ry="380" fill="url(#g1)"/>
     </svg>
   </div>
+
   <div class="hero-content">
-    <p class="hero-eyebrow">ちゃんと生きてきたのに苦しい、"仮面の自分"を卒業して本当の自分で生きたい人へ。</p>
-    <h1 class="hero-title">
-      何を学んでも、<br>
-      日常が変わらなかった<br>
-      <em>あなたへ。</em>
-    </h1>
+    <p class="hero-eyebrow">本当の自分で生きたいあなたへ</p>
+    <h1 class="hero-title">魂を開いて<br>人生の土台を整える<br>3ヶ月講座</h1>
+    <p class="hero-subtitle">本当の自分を思い出し、人生をステージアップする旅へ</p>
+
+    <div class="hero-tags">
+      <span class="hero-tag">もっと自分らしく生きたい</span>
+      <span class="hero-tag">本音が分からなくなった</span>
+      <span class="hero-tag">人生の次のステージへ進みたい</span>
+    </div>
+
     <p class="hero-body">
-      セミナーを受けたり、本を読んだりしても、<br>
-      どこか満たされない、現実が変わらない。<br><br>
-      それは、あなたの知識や努力が足りないからではなく、<br>
-      受け取る「器（あり方）」が整っていなかっただけ。<br><br>
-      周りの反応に振り回される人生を卒業し、<br>
-      あなたの奥にある<span style="color:#8B6914;">"魂の煌めき"</span>を思い出す。
+      変わるために頑張るのは、もう終わり。<br>
+      これからは、あなたの人生の土台を整えながら、<br>
+      「私は本当はどう生きたいんだろう？」<br>
+      を見つけていく時間です。<br><br>
+      誰かになるためではなく、<br>
+      本来のあなたに戻るための3ヶ月。
     </p>
-    <div style="margin: 32px 0; display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
-      <span style="background:rgba(107,87,68,0.12); color:var(--brown-mid); font-size:13px; padding:8px 18px; border-radius:20px; border:1px solid rgba(201,169,110,0.4); font-family:'Noto Serif JP',serif;">楽しい自分を演じてしまう</span>
-      <span style="background:rgba(107,87,68,0.12); color:var(--brown-mid); font-size:13px; padding:8px 18px; border-radius:20px; border:1px solid rgba(201,169,110,0.4); font-family:'Noto Serif JP',serif;">本音が分からなくなった</span>
-      <span style="background:rgba(107,87,68,0.12); color:var(--brown-mid); font-size:13px; padding:8px 18px; border-radius:20px; border:1px solid rgba(201,169,110,0.4); font-family:'Noto Serif JP',serif;">我慢することに依存している</span>
-    </div>
+
     <div class="hero-catch">
-      もう、我慢と頑張りで生きるのは<br>終わりにしない？
+      仲間と共に、<br>人生のステージを上げていきませんか？
     </div>
-    <p style="font-family:'Noto Serif JP',serif; font-size:clamp(14px,2.2vw,17px); letter-spacing:0.1em; color:var(--brown-mid); margin-bottom:48px; line-height:1.9;">
-      魂を開いて人生の土台を整える<br>3ヶ月講座
-    </p>
+
     <a href="#pricing" class="btn-primary">詳しく見る</a>
   </div>
   <div class="hero-scroll">
@@ -621,45 +422,43 @@
 </section>
 
 
-<!-- 🖼 画像指示: うつむいて窓の外を見ている女性のシルエット。逆光、柔らかいコントラスト。 -->
+<!-- 🖼 画像指示: 空を見上げている女性の横顔。光が差し込む、解放感のある構図。 -->
 <div class="img-block">
-  <div class="img-ph ph-warm">— 変わりたいのに、変われない —</div>
+  <div class="img-ph ph-warm">— 本来のあなたへ、還る旅へ —</div>
 </div>
 
 
 <!-- ══════════════════ PAIN ══════════════════ -->
 <section class="pain-section">
   <div class="container">
-    <p class="section-label">Pain Points</p>
-    <h2 class="section-title">こんなお悩みは<br>ありませんか？</h2>
-
-    <div class="pain-intro">
-      「楽しそう」「悩みなさそう」と言われているのに、<br>
-      どうしてこんなに苦しいんだろう？<br><br>
-      外から見えない苦しさを抱えているあなたへ。
-    </div>
+    <p class="section-label">For You</p>
+    <h2 class="section-title">こんなお気持ちは<br>ありませんか？</h2>
 
     <ul class="pain-list">
-      <li><span class="pain-check">✦</span>仕事や人間関係は上手にやっていて、「楽しそう」「悩みなさそう」と言われる</li>
-      <li><span class="pain-check">✦</span>実は、どこに行っても「楽しい私」「正しい私」「ちゃんとした私」「何を言われても平気な私」を演じてしまう</li>
-      <li><span class="pain-check">✦</span>自分の前に「アバター（仮面）」を置いて、勝手に喋らせている感覚がある</li>
-      <li><span class="pain-check">✦</span>他人から「不自然」「何も伝わってこない」と言われても、感じることすらできない</li>
-      <li><span class="pain-check">✦</span>正直、被害者でいる方が楽。自分がこの人生を選んできたと認めるのがしんどい</li>
-      <li><span class="pain-check">✦</span>「我慢すること」「頑張ること」にしがみつき、そこに依存して生きている</li>
+      <li><span class="pain-check">✦</span>周りからは楽しそうに見られるけれど、本当はどこか苦しい</li>
+      <li><span class="pain-check">✦</span>人の期待に応えようとして、自分の気持ちが分からなくなる</li>
+      <li><span class="pain-check">✦</span>やりたいことがあるのに、一歩踏み出せない</li>
+      <li><span class="pain-check">✦</span>人間関係で同じ悩みを繰り返してしまう</li>
+      <li><span class="pain-check">✦</span>自分を変えたいのに、何から始めたらいいか分からない</li>
+      <li><span class="pain-check">✦</span>本当はもっと自分らしく、自分の人生を生きたい</li>
+      <li><span class="pain-check">✦</span>一人ではなかなか続かない。仲間と一緒に進みたい</li>
     </ul>
 
     <div class="pain-close">
-      「どうして楽しそうだと言われるのに、<br>こんなに苦しいんだろう？」<br><br>
-      もしそう感じているなら、<br>
-      あなたの根本の生き方が変わるきっかけが、<br>ここにあります。
+      もし一つでも当てはまるなら、<br>
+      この講座はあなたの力になれるかもしれません。<br><br>
+      <span style="font-size:0.9em; color:var(--brown-light);">
+        それはあなたがダメだからではなく、<br>
+        人生を動かすための「土台」が、まだ整っていなかっただけです。
+      </span>
     </div>
   </div>
 </section>
 
 
-<!-- 🖼 画像指示: 両手で土や種を包むクローズアップ。温かみのある自然光。 -->
+<!-- 🖼 画像指示: 窓辺に座って外を見ている女性。柔らかい逆光。内省的な雰囲気。 -->
 <div class="img-block">
-  <div class="img-ph ph-sage">— 傷ついた場所から、土台を整える —</div>
+  <div class="img-ph ph-warm" style="background: linear-gradient(135deg, #E8DDD0 0%, #D0BFA8 100%);">— 本音に、耳を傾けてみる —</div>
 </div>
 
 
@@ -670,38 +469,39 @@
     <h2 class="section-title">齊藤茜から<br>あなたへ</h2>
 
     <div class="letter-body">
-      <p>なぜ、あなたがアバター（仮面）を置いて楽しそうに振る舞ってしまうのか。我慢や頑張りに依存してしまうのか。私には、その苦しみが痛いほど分かります。</p>
-
-      <p>かつての私は、家庭の中で、父からいつ攻撃されるかわからない、母から「あなたのせい」と言われるかわからない環境で生きていました。親から言われて傷つくことが、まるで自分が悪いかのように受け取っていたのです。</p>
-
-      <p>それからずっとずっと我慢して、生きていることがずっと地獄でした。「いつまで我慢したらこの苦しみが終わるのか、どうしたら終わるのか」と、ずっと絶望していました。</p>
+      <p>かつての私は、いつも周りの顔色を見ていました。嫌われないように。迷惑をかけないように。気づけば、本当の気持ちよりも、周りに求められる自分を生きていました。</p>
+      <p>楽しい人。元気な人。大丈夫な人。<br>
+      でも本当は、傷つくのが怖かった。嫌われるのが怖かった。だから本音を隠していました。</p>
+      <p>そんな私が少しずつ自分と向き合い、本音を認め、人生を選び始めた時、現実が変わり始めました。</p>
     </div>
 
-    <div class="letter-quote">
-      そんな地獄を生き延びるために、私はアバターを用意したのです。<br><br>
-      「何を言われてもダメージはありません」<br>
-      「サンドバッグにされても笑顔で受け流します」
+    <div class="letter-change">
+      <div class="letter-change-title">私自身に起きた変化</div>
+      <ul class="letter-change-list">
+        <li>10年以上手放せなかったものを、手放せるようになりました</li>
+        <li>1年間止まっていた新しい講座を、動かすことができました</li>
+        <li>以前なら怖くてできなかった選択を、少しずつ自分で選べるようになりました</li>
+        <li>人にどう思われるかより、自分の本音を大切にできるようになりました</li>
+      </ul>
     </div>
 
     <div class="letter-body">
-      <p>そうやって自分を守るしかなかった。だけど、大人になって安全な場所にいっても、初対面の人が怖くて仮面が出てしまう。「楽しい私」を演じている限り、周りからは「楽しいあなた」を要求され続ける。親しくした人からは、おかしい人だと思われて距離を取られるという、終わらない地獄が待っていました。</p>
-      <p>そして気づきました。このままでは、本当の自分を出さなければ、苦しいままで人生が終わってしまうって。</p>
+      <p>人生は突然変わったわけではありません。でも、少しずつ自分を信じられるようになったことで、現実が変わり始めたのです。</p>
     </div>
 
     <div class="letter-close">
-      「傷つくのが怖いんだね」<br>
-      まずは、そうやって怖がっている自分を認めること。<br>
-      そして、その生き方（我慢や頑張りへの依存）を<br>
-      選んでいたのは自分だったんだ、と受け入れること。<br><br>
-      そこからしか、本当のあなたの人生は始まりません。
+      あなたも、同じように変わることができます。<br>
+      この講座は、「本来のあなた」に還るための場所です。<br><br>
+      一人で抱えてきたものを、仲間と一緒に解きほぐしながら、<br>
+      魂が望む方向へ、少しずつ動き出していきましょう。
     </div>
   </div>
 </section>
 
 
-<!-- 🖼 画像指示: ノートとペン、手書きのジャーナル風。柔らかい自然光。 -->
+<!-- 🖼 画像指示: 両手で土や種を包むクローズアップ。温かみのある自然光。「育てる」イメージ。 -->
 <div class="img-block">
-  <div class="img-ph ph-warm" style="background: linear-gradient(135deg, #E8DDD0 0%, #D0BFA8 100%);">— 書くことで、自分が見えてくる —</div>
+  <div class="img-ph ph-sage">— 土台を、根から育てる —</div>
 </div>
 
 
@@ -711,21 +511,19 @@
     <p class="section-label">Concept</p>
     <h2 class="section-title">この講座が<br>大切にしていること</h2>
 
-    <div class="concept-body">
-      この3ヶ月は、綺麗に「完結」させることが目的ではありません。スッキリすることや、満足して終わることを目的にしないでください。これまで何十年も重ねてきた生き方を、たった3ヶ月で劇的に変えることなんてできないし、その必要もないからです。
-    </div>
-
     <div class="concept-highlight">
-      もやもやしたまま終わる人もいる。<br>
-      痛みを掘り起こしている最中で終わる人もいる。<br>
-      「あ、この我慢はもうやめたいな」と気づくところで終わる人もいる。<br><br>
-      <span style="color:var(--brown-mid);">それで、大正解なのです。</span>
+      この講座は、<br>
+      あなたを「変える」場所ではありません。<br><br>
+      <span style="color:var(--brown-mid);">本来のあなたを「思い出す」場所です。</span><br><br>
+      誰かになる必要はありません。<br>
+      完璧になる必要もありません。<br>
+      今の自分を知り、受け入れ、<br>
+      その上で「私はどう生きたいのか」を見つけていきます。
     </div>
 
-    <div class="concept-body" style="margin-bottom: 52px;">
-      この講座は、ゴールではなく「スタート地点」。これまで我慢を生きる術にしてきたあなたが、「これから自分を探してあげる旅」がようやく始まる場所です。<br><br>
-      本当の自分で生きることは、最初はとても怖いかもしれません。劇的には変わらないかもしれない。けれど、ちょっとだけ新しく行動できるようになる。そして気づいたら、付き合う人が変わる、人生のステージアップをしている。<br><br>
-      そんな風に、今までの生き方を見直し、新しく始めていくための、人生で最初の3ヶ月です。
+    <div class="section-body" style="margin-bottom: 52px;">
+      この3ヶ月は、綺麗に「完結」させることが目的ではありません。もやもやしたまま終わる人もいる。小さな気づきで終わる人もいる。それで大正解です。<br><br>
+      大切なのは、「自分の人生を生きようと決めること」。この講座は、その最初の一歩になる場所です。
     </div>
 
     <div class="concept-cards">
@@ -733,14 +531,14 @@
         <div class="concept-num">✨ 縦軸</div>
         <div>
           <div class="concept-card-title">心の土台 ── 今、この瞬間の自分を認める</div>
-          <div class="concept-card-body">「仮面を外すのが怖い自分」「どうにもならない自分」を、そのまま「あぁ、怖かったんだね」と認めてあげる（自己受容）ことから始めます。どんなあなたでも絶対に大丈夫だと思える「安心安全な文化（場）」の中で、ブレない「自分の軸」を定めます。</div>
+          <div class="concept-card-body">「どうにもならない自分」「怖い自分」を、そのまま「あぁ、怖かったんだね」と認めてあげることから始めます。どんなあなたでも大丈夫だと思える「安心安全な場」の中で、ブレない「自分の軸」を定めていきます。</div>
         </div>
       </div>
       <div class="concept-card">
         <div class="concept-num">✨ 横軸</div>
         <div>
-          <div class="concept-card-title">日々の実践 ── 自己否定とやりたいことを洗い出す</div>
-          <div class="concept-card-body">毎週のワークとジャーナリング（ノート術）で、親との関係や、ずっと蓋をしてきた怒りなど、心の中にあるものを徹底的に見つめます。「自分の反応を見る → やってみる → どうだったか？」を繰り返し、長年あなたを縛ってきた思考の癖を外していきます。</div>
+          <div class="concept-card-title">日々の実践 ── 本音を掘り起こし、動き出す</div>
+          <div class="concept-card-body">毎週のワークとジャーナリング（ノート術）で、自分の中にある本音を丁寧に見つめます。「自分の反応を見る → やってみる → どうだったか？」を繰り返し、長年の思考の癖を少しずつ外していきます。</div>
         </div>
       </div>
     </div>
@@ -752,34 +550,34 @@
 <section class="group-section">
   <div class="container">
     <p class="section-label">Why Group</p>
-    <h2 class="section-title">なぜ「一人」ではなく、<br>「みんな」でやるのか？</h2>
+    <h2 class="section-title">なぜ「一人」ではなく、<br>「仲間」と進むのか？</h2>
 
     <div class="group-intro">
-      長年かぶり続けてきたアバター（仮面）は、一人でノートに向き合っているだけでは、怖くてなかなか脱ぐことができません。なぜなら、アバターは「他人から自分を守るため」に作ったものだから。<br><br>
-      人と関わる中でついた傷は、人と関わる環境の中でしか、本当の意味で癒やすことはできないのです。<br><br>
-      この講座のグループワークでは、決して一人では辿り着けない「奇跡のサイクル」を、仲間と共に味わい尽くします。
+      一人だと、いつもの考え方に戻ってしまいます。いつもの不安。いつもの遠慮。いつもの我慢。<br><br>
+      でも仲間がいると、新しい視点に出会えます。勇気をもらえます。そして「私だけじゃなかった」を体験できます。<br><br>
+      この講座は、競争する場所ではありません。お互いを応援しながら、一緒に人生を前に進める場所です。
     </div>
 
     <div class="group-cycle">
       <div class="group-item">
         <div class="group-icon">🌿</div>
         <div>
-          <div class="group-item-title">みんなで話す（安心安全な場での開示）</div>
-          <div class="group-item-body">「楽しい私」を一度やめて、これまで隠してきた本音を言葉にしてみます。誰もあなたを否定しない、絶対的な安心空間です。</div>
+          <div class="group-item-title">本音を言葉にする（安心安全な場での開示）</div>
+          <div class="group-item-body">これまで隠してきた本音を、安全な場で言葉にしてみます。誰もあなたを否定しない空間の中で、少しずつ仮面を降ろしていきます。</div>
         </div>
       </div>
       <div class="group-item">
         <div class="group-icon">🪞</div>
         <div>
           <div class="group-item-title">自分の「癖」に気づく（鏡としての仲間）</div>
-          <div class="group-item-body">人の話を聞くことで、「あ、私、また自動的に『平気なフリ』をしようとしてた！」と、一人ではスルーしてしまう無意識の防衛癖にパッと気づくことができます。</div>
+          <div class="group-item-body">人の話を聞くことで、「あ、私もまた同じことをしてた！」と、一人ではスルーしてしまう無意識のパターンに気づくことができます。</div>
         </div>
       </div>
       <div class="group-item">
         <div class="group-icon">🤝</div>
         <div>
-          <div class="group-item-title">みんなの力を借りる（痛みの共有と脱皮）</div>
-          <div class="group-item-body">「怖いよね」と、仲間のエネルギーを借りることで、一番しんどかった「自分がこれを選んでいた」という痛みを、みんなで一緒に受け止めることができます。</div>
+          <div class="group-item-title">みんなの力を借りる（共に進む仲間）</div>
+          <div class="group-item-body">「怖いよね」と、仲間のエネルギーを借りながら、一人では踏み出せなかった一歩を、一緒に歩み出すことができます。</div>
         </div>
       </div>
     </div>
@@ -806,14 +604,14 @@
       <div class="curriculum-card">
         <div class="curriculum-tag">MONTHLY × 2</div>
         <div class="curriculum-title">月2回 ── 振り返りセッション（60分）</div>
-        <div class="curriculum-body">現在地を確認し、ステージを上げる個別フォロー。あなたのペースに寄り添います。</div>
+        <div class="curriculum-body">現在地を確認し、次のステージへ進む個別フォロー。あなたのペースに寄り添います。</div>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- 🖼 画像指示: 笑顔で空を見上げる女性（横顔・上向き）。解放感のある光の中。 -->
+<!-- 🖼 画像指示: 笑顔で空を見上げる女性（横顔・上向き）。光の中にいる、解放感のある印象。 -->
 <div class="img-block">
   <div class="img-ph ph-sage" style="height:320px; background: linear-gradient(160deg, #C8D8C0 0%, #A8C0A0 100%);">— 解放された先にある、あなたへ —</div>
 </div>
@@ -825,12 +623,33 @@
     <p class="section-label">Your Future</p>
     <h2 class="section-title">3ヶ月後に<br>得られる未来</h2>
     <ul class="results-list">
-      <li><span class="results-star">✦</span>誰に何を言われてもブレない「自分の軸」が定まる</li>
-      <li><span class="results-star">✦</span>人の反応に一喜一憂しなくなり、人生の土台が安定する</li>
-      <li><span class="results-star">✦</span>周囲の人と一緒に、人生のステージを上げていける</li>
-      <li><span class="results-star">✦</span>長年繰り返していた「お決まりの悩みパターン」が変わり、根本の生き方が変わる</li>
-      <li><span class="results-star">✦</span>「私はこれでいいんだ」と心から思え、本当の自分に出会い、私で生きる旅が始まる</li>
+      <li><span class="results-star">✦</span>自分の軸が育ち、誰に何を言われてもブレにくくなる</li>
+      <li><span class="results-star">✦</span>人の目に振り回されにくくなり、人生の土台が安定する</li>
+      <li><span class="results-star">✦</span>本音が分かるようになり、やりたいことへ動き出せる</li>
+      <li><span class="results-star">✦</span>長年繰り返していた「お決まりのパターン」に変化が起きる</li>
+      <li><span class="results-star">✦</span>新しい挑戦や、これまで怖くてできなかった選択ができるようになる</li>
+      <li><span class="results-star">✦</span>人間関係が変わり、付き合う人がシフトしていく</li>
+      <li><span class="results-star">✦</span>「私はこれでいいんだ」と思え、魂が望む方向へ動き出せる</li>
     </ul>
+  </div>
+</section>
+
+
+<!-- ══════════════════ TAIKEN CTA ══════════════════ -->
+<section class="taiken-section">
+  <div class="container">
+    <p class="taiken-label">Experience</p>
+    <h2 class="taiken-title">
+      まずは体験会から<br>はじめてみませんか？
+    </h2>
+    <p class="taiken-body">
+      申し込む前に、この場の空気を感じてほしい。<br>
+      体験会では、「自分の中にあるもの」に少しだけ触れることができます。<br>
+      隔週開催・オンライン参加可能です。
+    </p>
+    <a href="https://www.reservestock.jp/page/consecutive_events/46281" target="_blank" class="btn-taiken">
+      扉を、開けてみる
+    </a>
   </div>
 </section>
 
@@ -841,34 +660,30 @@
     <p class="section-label">Schedule</p>
     <h2 class="section-title">募集要項・<br>講座スケジュール</h2>
 
-    <div style="background:var(--charcoal); border-radius:4px; padding:32px 36px; margin-bottom:36px;">
-      <div style="font-size:11px; letter-spacing:0.35em; color:var(--gold); margin-bottom:20px;">📖 開催概要</div>
-      <div style="display:grid; gap:14px;">
-        <div style="display:flex; gap:16px; align-items:baseline; border-bottom:1px solid rgba(201,169,110,0.15); padding-bottom:14px;">
-          <span style="flex-shrink:0; font-size:12px; letter-spacing:0.2em; color:var(--gold); min-width:80px;">期間</span>
-          <span style="font-size:15px; color:var(--gold-light); font-family:'Noto Serif JP',serif;">2026年7月〜9月（3ヶ月）</span>
-        </div>
-        <div style="display:flex; gap:16px; align-items:baseline; border-bottom:1px solid rgba(201,169,110,0.15); padding-bottom:14px;">
-          <span style="flex-shrink:0; font-size:12px; letter-spacing:0.2em; color:var(--gold); min-width:80px;">開催日</span>
-          <span style="font-size:15px; color:var(--gold-light); font-family:'Noto Serif JP',serif; line-height:1.9;">金曜日 20:00〜（全6回・各約2時間）<br><span style="font-size:13px; color:rgba(232,213,176,0.7);">7/3・7/17・7/31・8/14・8/28・9/11</span></span>
-        </div>
-        <div style="display:flex; gap:16px; align-items:baseline; border-bottom:1px solid rgba(201,169,110,0.15); padding-bottom:14px;">
-          <span style="flex-shrink:0; font-size:12px; letter-spacing:0.2em; color:var(--gold); min-width:80px;">内容</span>
-          <span style="font-size:14px; color:rgba(232,213,176,0.8); line-height:2;">週1回の課題配信 ／ グループ講座（全6回）<br>月2回の振り返りセッション ／ ジャーナリングワーク</span>
-        </div>
-        <div style="display:flex; gap:16px; align-items:baseline;">
-          <span style="flex-shrink:0; font-size:12px; letter-spacing:0.2em; color:var(--gold); min-width:80px;">料金</span>
-          <span style="font-size:15px; color:var(--gold-light); font-family:'Noto Serif JP',serif;">¥193,334（税込）<span style="font-size:12px; color:rgba(232,213,176,0.6); margin-left:8px;">通常 ¥200,000</span></span>
-        </div>
+    <div class="overview-box">
+      <div class="overview-box-label">📖 開催概要</div>
+      <div class="overview-row">
+        <span class="overview-key">期間</span>
+        <span class="overview-val">2026年7月〜9月（3ヶ月）</span>
+      </div>
+      <div class="overview-row">
+        <span class="overview-key">開催日</span>
+        <span class="overview-val">金曜日 20:00〜（全6回・各約2時間）<br><small>7/3・7/17・7/31・8/14・8/28・9/11</small></span>
+      </div>
+      <div class="overview-row">
+        <span class="overview-key">内容</span>
+        <span class="overview-val"><small>週1回の課題配信 ／ グループ講座（全6回）<br>月2回の振り返りセッション ／ ジャーナリングワーク</small></span>
+      </div>
+      <div class="overview-row">
+        <span class="overview-key">料金</span>
+        <span class="overview-val">
+          通常価格 ¥200,000（税込）<br>
+          <small>カミサロン会員価格 ¥193,334（税込）</small>
+        </span>
       </div>
     </div>
 
     <div class="schedule-grid">
-      <div class="schedule-card">
-        <div class="schedule-card-label">PERIOD</div>
-        <div class="schedule-card-title">講座期間</div>
-        <div class="schedule-card-body">2026年7月〜9月（3ヶ月）</div>
-      </div>
       <div class="schedule-card">
         <div class="schedule-card-label">GROUP SESSION</div>
         <div class="schedule-card-title">グループ講座日程（全6回）</div>
@@ -900,7 +715,7 @@
       <div class="tokuten-title">✨ 参加者特典</div>
       <div class="tokuten-body">
         お申し込みいただいた方は、通常1回までご参加いただける体験会へ、<strong style="font-weight:400; color:var(--brown-mid);">追加で2回まで無料</strong>でご参加いただけます。<br><br>
-        体験会は不定期開催となりますため、開催日程は随時ご案内いたします。ご都合の合うタイミングでご参加ください。
+        体験会は不定期開催となりますため、開催日程は随時ご案内いたします。
       </div>
     </div>
   </div>
@@ -922,11 +737,12 @@
           <div class="price-box-tax">税込</div>
         </div>
         <div class="price-box featured">
-          <div class="price-box-label">カミサロン特別価格</div>
+          <div class="price-box-label">カミサロン会員価格</div>
           <div class="price-box-num">¥193,334</div>
           <div class="price-box-tax">税込</div>
         </div>
       </div>
+      <p class="price-note">※カミサロンは有料オンラインサロンです</p>
       <a href="https://www.reservestock.jp/conclusions/28216" target="_blank" class="pricing-cta">
         3ヶ月を、共に歩む
       </a>
@@ -939,21 +755,32 @@
 </section>
 
 
-<!-- ══════════════════ TAIKEN CTA ══════════════════ -->
-<section class="taiken-section">
+<!-- ══════════════════ CLOSING ══════════════════ -->
+<section class="closing-section">
   <div class="container">
-    <p class="taiken-label">Experience</p>
-    <h2 class="taiken-title">
-      まずは体験会から<br>はじめてみませんか？
-    </h2>
-    <p class="taiken-body">
-      3ヶ月を、共に歩む前に、この場の空気を感じてほしい。<br>
-      体験会では、「自分の中にあるもの」に少しだけ触れることができます。<br>
-      隔週開催・オンライン参加可能です。
-    </p>
-    <a href="https://www.reservestock.jp/page/consecutive_events/46281" target="_blank" class="btn-taiken">
-      扉を、開けてみる
-    </a>
+    <div class="closing-title">
+      怖さがあってもいい。<br>
+      迷いがあってもいい。<br>
+      完璧じゃなくてもいい。<br><br>
+      大切なのは、<br>
+      自分の人生を生きようと決めること。
+    </div>
+
+    <div class="closing-body">
+      ここから3ヶ月。<br>
+      仲間と一緒に、<br>
+      <span style="color:#8B6914;">魂が望む方向へ</span><br>
+      動き出していきましょう。
+    </div>
+
+    <div class="closing-btns">
+      <a href="https://www.reservestock.jp/page/consecutive_events/46281" target="_blank" class="btn-taiken" style="color:var(--brown-mid); border-color:var(--brown-mid);">
+        扉を、開けてみる
+      </a>
+      <a href="https://www.reservestock.jp/conclusions/28216" target="_blank" class="btn-primary">
+        3ヶ月を、共に歩む
+      </a>
+    </div>
   </div>
 </section>
 
@@ -965,8 +792,8 @@
     <h2 class="section-title">この講座を安心して<br>受けていただくために</h2>
 
     <div class="section-body" style="margin-bottom: 40px;">
-      この講座は、知識を学ぶだけではなく、ご自身の人生や思考の癖、これまでの生き方と向き合っていく実践型の講座です。そのため、講座期間中に感情が揺れたり、一時的に苦しさやモヤモヤを感じる場合があります。<br><br>
-      変化や気づき、体感には個人差があります。特定の効果や成果を保証するものではありません。完璧に変わることや、綺麗に完結することを目的とせず、「今の自分を知り、本当の人生を生き始めること」を大切にしています。
+      この講座は、知識を学ぶだけではなく、ご自身の人生や思考の癖、これまでの生き方と向き合っていく実践型の講座です。そのため、講座期間中に感情が揺れたり、一時的にモヤモヤを感じる場合があります。<br><br>
+      変化や気づき、体感には個人差があります。特定の効果や成果を保証するものではありません。
     </div>
 
     <div class="policy-block">
@@ -997,43 +824,6 @@
         <li>掲載をご希望されない場合は、事前にお知らせください</li>
         <li>運営が困難になる行為や、場の安全性を著しく損なうと判断した場合、ご参加をお断りする場合があります</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-
-<!-- 🖼 画像指示: 静かな夕暮れの空、または開いた扉の向こうに光が見える構図。 -->
-<div class="img-block">
-  <div class="img-ph ph-dusk">— 扉を、開ける —</div>
-</div>
-
-
-<!-- ══════════════════ CLOSING ══════════════════ -->
-<section class="closing-section">
-  <div class="container">
-    <div class="closing-title">
-      理想の自分じゃなくても、どうにもならない自分でもいい。<br>
-      完結しなくていい。もやもやしたままでもいい。<br>
-      我慢にしがみついてしまうあなたも、大切なあなたの一部です。
-    </div>
-
-    <div class="closing-body">
-      「あぁ、怖かったんだね」と<br>抱きしめて認めたとき、<br>
-      あなたの奥にある<em>「魂の煌めき」</em>が<br>目を覚まします。
-    </div>
-
-    <p style="font-family:'Noto Serif JP',serif; font-size:clamp(16px,2.8vw,20px); color:var(--brown-mid); line-height:2; margin-bottom:52px;">
-      一人でアバターを演じ続けるのは、もう終わりにしませんか？<br>
-      ここから、本当のあなたで生きる旅を、一緒に始めてみましょう。
-    </p>
-
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-      <a href="https://www.reservestock.jp/page/consecutive_events/46281" target="_blank" class="btn-taiken" style="color:var(--brown-mid); border-color:var(--brown-mid);">
-        扉を、開けてみる
-      </a>
-      <a href="https://www.reservestock.jp/conclusions/28216" target="_blank" class="btn-primary">
-        3ヶ月を、共に歩む
-      </a>
     </div>
   </div>
 </section>
